@@ -83,12 +83,12 @@ tribble(
 ```{r}
 library(tibble)
 tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Doctor of Philosophy (Ecological Genetics)", "2006", "University of Queensland", "Brisbane, Australia",
-  "Master of Science (Biology)", "1999", "Simon Fraser University", "Vancouver, Canada",
-  "Bachelor of Science", "1995", "Simon Fraser University", "Vancouver, Canada"
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ Note,
+  "Doctor of Philosophy (Ecological Genetics)", "2006", "University of Queensland", "Brisbane, Australia", "UQ Dean's Commendation for Outstanding Research Higher Degree Thesis",
+  "Master of Science (Biology)", "1999", "Simon Fraser University", "Vancouver, Canada", NULL,
+  "Bachelor of Science", "1995", "Simon Fraser University", "Vancouver, Canada", NULL
 ) %>% 
-  detailed_entries(Institution, Year, Degree, Where)
+  detailed_entries(Institution, Year, Degree, Where, why = Note)
 
 ```
 
