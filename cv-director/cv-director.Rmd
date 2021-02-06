@@ -1,0 +1,140 @@
+---
+name: Stephanie
+surname: Hazlitt
+position: "Senior Data Scientist"
+address: "Office of the Chief Information Officer, Ministry of Citizens' Services, Government of British Columbia"
+phone: +1 250 516 0390
+email: "stephhazlitt@gmail.com"
+twitter: stephhazlitt
+github: stephhazlitt
+orcid: 0000-0002-3161-2304
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: "414141"
+output: 
+  vitae::awesomecv:
+    keep_tex: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+```
+
+&nbsp;
+&nbsp;
+
+I am a PhD data scientist with a passion for developing open, reproducible and well-communicated data science products. I enjoy learning and teaching, as well as mentoring and encouraging an accessible data science learning community. I support people and teams to be productive in creating and sharing data science tools and products, with a focus on building trust and achieving results.
+
+
+# Skills
+
+```{r}
+tribble(
+  ~topic, ~skills,
+ "Data Science & Reproducible Research", "proficient with R (tidyverse), Markdown, Git & GitHub, experience with R package development ", 
+ "Data Analysis & Statistical Inference", "experience with frequentist, genetic, spatial, clustering and related analyses",
+ "Effective Communication", "proficient in writing, speaking & data visualisation for both technical & general audiences", 
+ "Project Management & Team Building", "familiarity with DevOps and Agile approaches, passionate about supporting and growing people and teams
+"
+ ) %>% 
+  detailed_entries(
+    with = topic,
+     what = skills)
+```
+
+# Professional Experience
+
+```{r}
+tribble(
+  ~ title, ~ date_range, ~ organisation, ~ location, ~ duties,
+  "Senior Data Scientist", "2019-present", "Office of the Chief Information Officer, Ministry of Citizen's Services, Government of British Columbia", "Victoria, Canada", "Leading a small data science team that supports data-driven decision making and the Data Innovation Program—a new government data integration and analytics platform. Contributing to building internal data science capacity through development and delivery of data science training events and supporting a government data science fellowship program, including recruitment, onboarding and mentoring of early career data scientists.",
+    "Unit Head, State of Environment Reporting", "2011-2019", "Ministry of Environment & Climate Change Strategy, Government of British Columbia", "Victoria, Canada", "Provided team leadership for data analysis, design and production of web-based environmental indicators and data visualizations. Modernized government data science work flows based on open science and reproducible principles, shifting to open source tools and publishing open data and open code through bcgov GitHub. Communicated reporting products and tools through public engagements, blog posts and Twitter.",
+      "Killam & NSERC Postdoctoral Research Fellow", "2008-2009", "University of British Columbia", "Vancouver, Canada", "Conducted novel research and data analyses in conservation planning and ecological genetics, published research results in the peer-reviewed literature and mentored and supported graduate students within a collaborative research group.",
+ "Conservation Science & Policy Specialist", "2007-2011", "Ministry of Environment, Government of British Columbia", "Victoria, Canada", "Provided data analysis support and subject matter expertise for the development and coordination of policies, programs and plans in support of species and ecosystems at risk in British Columbia, Canada.",
+) %>% 
+  detailed_entries(
+    what = organisation,
+    when = date_range,
+    with = title,
+    where = location,
+    why = duties)
+```
+
+
+# Teaching & Mentoring
+
+```{r}
+tribble(
+  ~ content, ~ when,
+"Coordinator of the B.C. Government Data Science Community of Practice", "2019 - present",
+"Content development and team teaching of Data Science with R and Version Control with Git & GitHub workshops for the B.C. Public Service", "2015 - present",
+"Presentations & guest lectures on using R and open & reproducible data science in government", "UBC MGEM Geoinformatics Seminar (2018), UBC R Meet Up (2015), Victoria R Meet Up (2015)",
+"Mentoring and supporting people and teams in learning and transitioning to open & reproducible data science workflows", "colleagues, co-operative students and data science fellows"
+) %>%
+  detailed_entries(
+    with = content,
+     what = when)
+```
+
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Doctor of Philosophy (Ecological Genetics)", "2006", "University of Queensland", "Brisbane, Australia",
+  "Master of Science (Biology)", "1999", "Simon Fraser University", "Vancouver, Canada",
+  "Bachelor of Science", "1995", "Simon Fraser University", "Vancouver, Canada"
+) %>% 
+  detailed_entries(Institution, Year, Degree, Where)
+
+```
+
+
+# Professional Development
+
+```{r}
+tribble(
+  ~ Course, ~ Year,
+  "Tidyverse Developer Day (RStudio::Conference)", "2020",
+  "Big Data with R Workshop (RStudio::Conference)", "2020",
+  "Certified Carpentries Instructor (The Carpentries)", "2020",
+  "Lego4Scrum Workshop (BC Public Service)", "2018",
+  "Extending the Tidyverse R Workshop (RStudio::Conference)", "2018",
+  "Science Communication Workshop (COMPASS)", "2017",
+  "Presenting Data and Information (Edward Tufte)", "2016",
+  "Fierce Conversations (BC Public Service)", "2016",
+  "Advanced Trend Detection Analyses in R (Ghement Statistical Consulting Ltd)", "2015",
+  "Workplace Communications (Justice Institute of British Columbia)", "2015",
+  "Conflict Dynamics in Groups (Justice Institute of British Columbia)", "2014",
+  # "Software Carpentry Bootcamp (Software Carpentry Foundation)", "2014",
+  # "Computing for Data Analysis (Coursera)", "2013",
+  # "Telling Stories with Data (Tyee Master Class)", "2012",
+  "Negotiation Skills (Justice Institute of British Columbia)", "2011",
+  "Project Management (Justice Institute of British Columbia)", "2011",
+  # "Foundations of Conflict Resolution (Justice Institute of British Columbia)", "2007"
+ ) %>% 
+  brief_entries(Course, Year)
+```
+
+
+# Selected Software Contributions
+
+```{r}
+tribble(
+  ~package, ~url,
+  "Teucher, A., Albers, S., & Hazlitt, S. (2020) bcdata: Search and retrieve data from the B.C. Data Catalogue.", "https://CRAN.R-project.org/package=bcdata",
+    "Teucher, A., Hazlitt, S. & Albers, S. (2020) bcmaps: Map Layers and Spatial Utilities for British Columbia.", "https://CRAN.R-project.org/package=bcmaps",
+    "Teucher, A., Hazlitt, S. & Albers, S. (2017) bcgovr: Set up of bcgov R projects & packages.", "https://github.com/bcgov/bcgovr",
+  "Teucher, A., Hazlitt, S., Verma, A. & LaZerte, S. (2015) rcaaqs: Tools to analyze air quality data according to Canadian Ambient Air Quality Standard (CAAQS) guidelines.", "https://github.com/bcgov/rcaaqs"
+ ) %>% 
+  detailed_entries(
+    what = url,
+    with = package)
+```
+
+
+For a list of technical publications see [_my Google Scholar profile_](https://scholar.google.ca/citations?user=h7CzOjoAAAAJ&hl=en)
+
