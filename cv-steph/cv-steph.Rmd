@@ -1,0 +1,111 @@
+---
+name: Stephanie
+surname: Hazlitt
+position: "Senior Data Scientist"
+address: "Office of the Chief Information Officer, Ministry of Citizens' Services, Government of British Columbia"
+phone: +1 250 516 0390
+email: "stephhazlitt@gmail.com"
+twitter: stephhazlitt
+github: stephhazlitt
+orcid: 0000-0002-3161-2304
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: "414141"
+output: 
+  vitae::awesomecv:
+    keep_tex: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+library(readr)
+library(dplyr)
+```
+
+&nbsp;
+&nbsp;
+
+
+```{r}
+aboutme <- read_csv(here::here("data/about-me.csv")) %>%
+  pull(about)
+```
+
+`r aboutme`
+
+
+# Skills
+
+```{r}
+read_csv(here::here("data/skills.csv")) %>%
+  detailed_entries(with = topic,
+                   what = skills)
+```
+
+# Professional Experience
+
+```{r}
+read_csv(here::here("data/experience.csv")) %>%
+  detailed_entries(
+    what = organisation,
+    when = date_range,
+    with = title,
+    where = location,
+    why = duties
+  )
+```
+
+
+# Teaching & Mentoring
+
+```{r}
+read_csv(here::here("data/teaching.csv")) %>%
+  detailed_entries(with = content,
+                   what = when)
+```
+
+
+# Education
+
+```{r}
+read_csv(here::here("data/education.csv")) %>%
+  detailed_entries(where = institution,
+                   when = year,
+                   with = degree,
+                   what = where,
+                   why = note)
+```
+
+
+# Professional Development
+
+```{r}
+read_csv(here::here("data/prof-development.csv")) %>%
+  brief_entries(what = course,
+                when = year)
+```
+
+
+# Selected Software Contributions
+
+```{r}
+tribble(
+  ~ package,
+  ~ url,
+  "Teucher, A., Albers, S., & Hazlitt, S. (2020) bcdata: Search and retrieve data from the B.C. Data Catalogue.",
+  "https://CRAN.R-project.org/package=bcdata",
+  "Teucher, A., Hazlitt, S. & Albers, S. (2020) bcmaps: Map Layers and Spatial Utilities for British Columbia.",
+  "https://CRAN.R-project.org/package=bcmaps",
+  "Teucher, A., Hazlitt, S. & Albers, S. (2017) bcgovr: Set up of bcgov R projects & packages.",
+  "https://github.com/bcgov/bcgovr",
+  "Teucher, A., Hazlitt, S., Verma, A. & LaZerte, S. (2015) rcaaqs: Tools to analyze air quality data according to Canadian Ambient Air Quality Standard (CAAQS) guidelines.",
+  "https://github.com/bcgov/rcaaqs"
+) %>%
+  detailed_entries(what = url,
+                   with = package)
+```
+
+
+For a list of technical publications see [_my Google Scholar profile_](https://scholar.google.ca/citations?user=h7CzOjoAAAAJ&hl=en)
+
