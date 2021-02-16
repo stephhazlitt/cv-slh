@@ -1,5 +1,5 @@
 ## Steph's CV
 
-Exploring using the {vitae} R package https://pkg.mitchelloharawild.com/vitae/index.html
+Using the {vitae} R package https://pkg.mitchelloharawild.com/vitae/index.html
 
 
